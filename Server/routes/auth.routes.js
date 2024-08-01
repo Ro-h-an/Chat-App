@@ -18,12 +18,7 @@ const client = new MongoClient(uri);
 
 router.get('/auth/google', passport.authenticate('google'));
 
-passport.use(new GoogleStrategy({
-    clientID: "746892723511-i7sge9cuimag53utdpvubsbah567fr7d.apps.googleusercontent.com",
-    clientSecret: "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",
-    callbackURL: '/auth/google/callback',
-    scope: [ 'profile', 'email' ]
-},
+
 
 function (accessToken, refreshToken, profile, cb) {
     const defaultUser = {
