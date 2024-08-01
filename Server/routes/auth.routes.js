@@ -1,14 +1,13 @@
-const express = require('express');
-const fs = require('fs');
-const { MongoClient, ObjectId } = require('mongodb');
-const passport = require('passport');
-const GoogleStrategy = require('passport-google-oauth20').Strategy;
+import express from "express";
+import { signup, login, logout } from "../controllers/auth.controller.js";
 
 const router = express.Router();
 
-const uri = 'mongodb://root:password@mongo:27017/';
-const client = new MongoClient(uri);
+router.post("/signup", signup)
+router.post("/login", login)
+router.post("/logout", logout)
 
+<<<<<<< HEAD
 // router.use('/', (req, res, next) => {
 //     console.log("this is req.user" + req.user);
 //     console.log(req.user);
@@ -92,3 +91,6 @@ passport.deserializeUser((user, cb) => {
 });
 
 module.exports = router;
+=======
+export default router;
+>>>>>>> parent of ef643f8 (Fix Bug of New User Authentication)
